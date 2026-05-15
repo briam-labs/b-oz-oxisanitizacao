@@ -20,21 +20,50 @@ body{
 .header{
     grid-area: header;
     background-color: var(--color-primary);
+
+    /* Fixo no topo */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    /* Transição suave em todas as propriedades */
+    transition: padding var(--transition-fast),
+                min-height var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+/* Estado ao rolar a página */
+.header.scrolled{
+    box-shadow: var(--header-shadow-scrolled);
 }
 
 .header .header-container{
     display: flex;
-    padding: 20px 40px;
+    padding: var(--header-padding-default);
     justify-content: space-between;
     align-items: center;
-    min-height: 70px;
+    min-height: var(--header-min-height-default);
+    transition: padding var(--transition-fast),
+                min-height var(--transition-fast);
+}
+
+/* Container reduzido ao rolar */
+.header.scrolled .header-container{
+    padding: var(--header-padding-scrolled);
+    min-height: var(--header-min-height-scrolled);
 }
 
 .header h1{
-    font-size: var(--font-size-xl);
+    font-size: var(--header-logo-default);
     font-weight: var(--font-weight-bold);
-    transition: var(--transition-fast);
+    transition: font-size var(--transition-fast),
+                color var(--transition-fast);
     text-shadow: 1px 1px 0px var(--color-shadow-text);
+}
+
+/* Logo reduzida ao rolar */
+.header.scrolled h1{
+    font-size: var(--header-logo-scrolled);
 }
 
 .header a:hover h1{
@@ -62,7 +91,10 @@ body{
     font-size: var(--font-size-hero);
 }
 
-
+@-webkit-keyframes seta-para-baixo {
+    0%{-webkit-transform: translateY(0); opacity: 0.4;}
+    100%{-webkit-transform: translateY(0.3em); opacity: 0.8;}
+}
 
 @media (max-width: 425px){
     .hero{
