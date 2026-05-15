@@ -40,6 +40,15 @@
     --transition-fast: 0.3s;
     --transition-medium: 0.5s ease-in-out;
 
+    /* Header fixo */
+    --header-padding-default: 20px 40px;
+    --header-padding-scrolled: 10px 40px;
+    --header-logo-default: 3.5rem;
+    --header-logo-scrolled: 2.5rem;
+    --header-min-height-default: 70px;
+    --header-min-height-scrolled: 50px;
+    --header-shadow-scrolled: 0 2px 12px rgba(0, 0, 0, 0.1);
+
     /* Ícones e mídias */
     --icon-size: 3rem;
     --logo-watermark-size: 60px;
