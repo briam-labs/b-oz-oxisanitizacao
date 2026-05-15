@@ -90,23 +90,47 @@
         display: block;
     }
 
+    /* Nav deixa de ser absoluto — fica no fluxo normal do flex */
     .header nav{
-        position: absolute;
-        top: 8px;
-        right: 35px;
+        position: relative;
+        top: unset;
+        right: unset;
         z-index: 1;
+        display: flex;
+        align-items: center;
     }
 
+    /* Label (ícone hamburger) centralizado verticalmente */
+    .header nav label{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    /* Dropdown abre abaixo do ícone, alinhado à direita */
     .header nav ul{
+        position: absolute;
+        top: 100%;
+        right: 0;
         width: 200px;
         background-color: var(--color-primary);
         padding: 10px;
         border-radius: var(--border-radius-card);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     }
 
     .header nav ul a{
         display: block;
         text-align: center;
         padding: 10px;
+    }
+
+    /* header-container precisa de position relative
+       para o dropdown se posicionar corretamente */
+    .header .header-container{
+        position: relative;
     }
 }

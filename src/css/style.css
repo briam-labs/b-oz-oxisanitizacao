@@ -91,10 +91,10 @@ body{
     font-size: var(--font-size-hero);
 }
 
-@-webkit-keyframes seta-para-baixo {
+/* @-webkit-keyframes seta-para-baixo {
     0%{-webkit-transform: translateY(0); opacity: 0.4;}
     100%{-webkit-transform: translateY(0.3em); opacity: 0.8;}
-}
+} */
 
 @media (max-width: 425px){
     .hero{
